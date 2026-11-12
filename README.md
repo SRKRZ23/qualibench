@@ -1,3 +1,10 @@
+> **Independent label-quality auditing. 1.4 MB native binary. Audits 100k labels in 26 ms.**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![.NET](https://img.shields.io/badge/.NET-10.0-purple.svg)](https://dotnet.microsoft.com)
+[![Platform](https://img.shields.io/badge/platform-macOS%20arm64-lightgrey.svg)](#deployment)
+[![F1](https://img.shields.io/badge/F1-0.998%20synthetic%20%7C%200.855%20real-brightgreen.svg)](#key-numbers)
+
 # QualiBench
 
 **Independent label-quality auditing — runs on your laptop, not someone else's cloud.**
