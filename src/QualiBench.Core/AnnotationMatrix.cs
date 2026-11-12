@@ -23,17 +23,27 @@ public sealed class AnnotationMatrix
 
     public static AnnotationMatrix LoadCsv(string path)
     {
-        var lines = File.ReadAllLines(path);
-        if (lines.Length == 0) throw new InvalidDataException("Empty CSV");
-        int annotators = lines[0].Split(',').Length;
-        int items = lines.Length;
+        // Skip blank lines and optional header row.
+        var raw = File.ReadAllLines(path);
+        var lines = new System.Collections.Generic.List<string>();
+        foreach (var l in raw) if (!string.IsNullOrWhiteSpace(l)) lines.Add(l);
+        if (lines.Count == 0) throw new InvalidDataException("Empty CSV");
+
+        int start = 0;
+        var firstCell = lines[0].Split(',')[0].Trim();
+        if (!int.TryParse(firstCell, out _))
+            start = 1;   // header row detected
+
+        if (lines.Count <= start) throw new InvalidDataException("CSV has header but no data rows");
+        int annotators = lines[start].Split(',').Length;
+        int items = lines.Count - start;
         var data = new int[items * annotators];
         int min = int.MaxValue, max = int.MinValue;
         for (int i = 0; i < items; i++)
         {
-            var parts = lines[i].Split(',');
+            var parts = lines[i + start].Split(',');
             if (parts.Length != annotators)
-                throw new InvalidDataException($"Row {i} has {parts.Length} cols, expected {annotators}");
+                throw new InvalidDataException($"Row {i + start} has {parts.Length} cols, expected {annotators}");
             for (int j = 0; j < annotators; j++)
             {
                 var s = parts[j].Trim();

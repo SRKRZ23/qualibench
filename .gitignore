@@ -5,3 +5,6 @@ obj/
 BenchmarkDotNet.Artifacts/
 synthetic.csv
 truth.csv
+*.dSYM/
+*.pdb
+validation_data/

@@ -79,7 +79,7 @@ switch (mode)
         string path  = args.Length > 1 ? args[1] : "synthetic.csv";
         string tpath = args.Length > 2 ? args[2] : "truth.csv";
         var m = AnnotationMatrix.LoadCsv(path);
-        var truth = File.ReadAllLines(tpath).Select(int.Parse).ToArray();
+        var truth = QualiBench.Core.TruthLabels.LoadCsv(tpath);
         if (truth.Length != m.Items) throw new InvalidDataException("truth length != items");
 
         var sw = Stopwatch.StartNew();
@@ -127,7 +127,7 @@ switch (mode)
         int sample   = args.Length > 3 ? int.Parse(args[3]) : int.MaxValue;
 
         var m = AnnotationMatrix.LoadCsv(path);
-        var truth = File.ReadAllLines(tpath).Select(int.Parse).ToArray();
+        var truth = QualiBench.Core.TruthLabels.LoadCsv(tpath);
         if (truth.Length != m.Items) throw new InvalidDataException("truth length != items");
 
         var sw = Stopwatch.StartNew();
@@ -150,7 +150,7 @@ switch (mode)
         string path  = args.Length > 1 ? args[1] : "synthetic.csv";
         string tpath = args.Length > 2 ? args[2] : "truth.csv";
         var m = AnnotationMatrix.LoadCsv(path);
-        var truth = File.ReadAllLines(tpath).Select(int.Parse).ToArray();
+        var truth = QualiBench.Core.TruthLabels.LoadCsv(tpath);
         if (truth.Length != m.Items) throw new InvalidDataException("truth length != items");
 
         var sw = Stopwatch.StartNew();

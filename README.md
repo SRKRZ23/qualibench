@@ -55,3 +55,32 @@ Example GitHub Actions step:
 The step fails the pipeline when label quality regresses below 0.85 F1.
 Drop the binary into your repo (`publish-aot/QualiBench.Cli`) and call it directly —
 no setup step, no runtime dependency, starts in 3 ms.
+
+---
+
+## Validation on real data
+
+Two public datasets, both with raw multi-annotator votes + ground truth:
+
+| Dataset | N items | K annotators | Krippendorff alpha | Best F1 |
+|---|---|---|---|---|
+| **WhichDog** (MTurk crowdsourcing) | 400 | 1,028 | 0.4255 | **0.855** (CL) |
+| **CytoCrowd** (4 pathologists + gold) | 446 | 4 | 0.2474 | **0.817** (Consensus) |
+
+**Which detector wins depends on K:**
+
+- **K >= ~50 annotators** -> Confident Learning wins by **+26 F1 points**
+  (it can statistically separate good annotators from bad).
+- **K <= ~5 experts** -> Consensus wins by **+4 F1 points** (confusion matrix
+  is too noisy on small K).
+
+CytoCrowd is a published cervical cytology dataset from four board-certified
+pathologists. The alpha = 0.25 inter-rater agreement is itself a result:
+**even experts disagree**.
+
+### The scale-AI pitch
+
+Four certified pathologists, alpha = 0.25. One of them has 40% reliability
+against 89-95% for the other three. QualiBench found him in 0.2 ms. If you pay
+a labeling vendor for "expert annotation", how would you know there isn't an
+A1 on their team?
