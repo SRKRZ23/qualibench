@@ -9,7 +9,7 @@
 
 **Independent label-quality auditing — runs on your laptop, not someone else's cloud.**
 
-QualiBench is a 1.6 MB native binary that audits annotated datasets in milliseconds.
+QualiBench is a 1.4 MB native binary that audits annotated datasets in milliseconds.
 It tells you *which labels to trust, which annotators to retrain, and which samples to
 re-label* — with a full precision/recall curve instead of a vendor SLA.
 
