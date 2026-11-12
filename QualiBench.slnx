@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/QualiBench.Benchmarks/QualiBench.Benchmarks.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/QualiBench.Cli/QualiBench.Cli.csproj" />
+    <Project Path="src/QualiBench.Core/QualiBench.Core.csproj" />
+  </Folder>
+</Solution>

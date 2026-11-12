@@ -1,0 +1,7 @@
+bin/
+obj/
+*.tmp
+*.bak
+BenchmarkDotNet.Artifacts/
+synthetic.csv
+truth.csv
