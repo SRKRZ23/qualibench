@@ -43,7 +43,7 @@ M3 Pro, .NET 10, synthetic 100k×10 dataset, 10% injected noise.
 | Runtime | Startup | `evaluate` | `sweep` | Binary |
 |---|---|---|---|---|
 | JIT | 19.7 ms / 36 MiB | 129 ms / 72 MiB | 191 ms / 79 MiB | — |
-| **NativeAOT** | **3.0 ms / 4.5 MiB** | 77 ms / 35 MiB | 176 ms / 40 MiB | **1.6 MB** |
+| **NativeAOT** | **3.0 ms / 4.5 MiB** | 77 ms / 35 MiB | 176 ms / 40 MiB | **1.4 MB** |
 
 Full reproduction: [`docs/AOT-BENCH.md`](docs/AOT-BENCH.md).
 
