@@ -26,7 +26,7 @@ CI gate: qualibench cl data.csv truth.csv --fail-on-noise 0.85 -> exit 1 if F1 d
 otool -L shows /usr/lib/* only.
 
 8/ MIT license. Code + reproducible benchmark:
-github.com/REPLACE_USERNAME/qualibench
+github.com/SRKRZ23/qualibench
 
 Feedback welcome. Especially from anyone who's bought annotation services and wished they could audit the output.
 

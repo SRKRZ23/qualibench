@@ -24,6 +24,6 @@ So the tool ships two detectors. You pick per workload:
 
 I'm not claiming this replaces Scale AI or Surge. I'm claiming the audit layer should be independent of the vendor, open-source, and run in 26 ms.
 
-MIT license. Code and reproducible validation: github.com/REPLACE_USERNAME/qualibench
+MIT license. Code and reproducible validation: github.com/SRKRZ23/qualibench
 
 #DataQuality #MachineLearning #ConfidentLearning #DataAnnotation #MLOps
